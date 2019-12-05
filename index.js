@@ -90,7 +90,7 @@ module.exports = function brokerLogger (dispatch) {
 	dispatch.hook(`S_TRADE_BROKER_HISTORY_ITEM_LIST`, 2, (event) => {
 		if (isLogging){
 			currentCache = currentCache.concat(event.listings);
-			// ... convert to json and store to file		
+			// request the next page if any (writes data to log file when there is not).
 			setTimeout(() => {
 				requestNextPageHistory(event.page, event.pageCount);		
 			}, 50);

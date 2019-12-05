@@ -22,18 +22,18 @@ Note: the game itself will only make available historical transactions from the 
 ## Data structure
 - Each JSON array element / CSV row (aside from the header) represents a single brokerage transaction.
 - All fields from the [S_TRADE_BROKER_HISTORY_ITEM_LIST](https://github.com/tera-toolbox/tera-data/blob/master/protocol/S_TRADE_BROKER_HISTORY_ITEM_LIST.2.def) will be included. Relevant fields of interest will generally be:
-  - auction: auction id
-  - dbid: database id
-  - id: this is the item id (commonly found in [S_ITEMLIST](https://github.com/tera-toolbox/tera-data/blob/master/protocol/S_ITEMLIST.3.def) and other similar packets
-  - amount: stack size
-  - ownerId: this is the playerID (found in [S_LOGIN](https://github.com/tera-toolbox/tera-data/blob/master/protocol/S_LOGIN.14.def) and other similar packets. This uniquely identifies the character in question (in conjunction with their character name).
-  - buyNow: Set to true if the buyer bought without negotiation
+  - auction: auction id.
+  - dbid: database id.
+  - id: this is the item id; commonly found in [S_ITEMLIST](https://github.com/tera-toolbox/tera-data/blob/master/protocol/S_ITEMLIST.3.def) and other similar packets.
+  - amount: stack size.
+  - ownerId: this is the playerID; found in [S_LOGIN](https://github.com/tera-toolbox/tera-data/blob/master/protocol/S_LOGIN.14.def) and other similar packets. This uniquely identifies the character in question (in conjunction with their character name).
+  - buyNow: Set to true if the buyer bought without negotiation.
   - time: The unix timestamp of the transaction, represented in seconds since [00:00:00 UTC on 1 January 1970](https://en.wikipedia.org/wiki/Unix_time).
   - price: how much was paid, in units of copper:
     - Copper = 1
     - Silver = 100
     - Gold = 10000    
-  - itemLevel: item level
+  - itemLevel: item level.
   - name: Character name. _**Yes, you can now see who exactly has sold what, assuming you know their character names**_.
 
 ## Log Files

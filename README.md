@@ -21,6 +21,11 @@ Note: the game itself will only make available historical transactions from the 
 - [Tera-Proxy's tera-data](https://github.com/tera-proxy/tera-data/tree/master/map) repository typically has full opcodes for EU and other regions.
 - If Pinkie takes awhile to update, you can use a [packet debugger](https://github.com/SoliaRdi/PacketsLogger) to map them yourself (it's not hard if you already have the protocol definition).
 
+## Log Files
+- All data files generated will be stored in the folder _**\<Path to ToolBox/Proxy>\mods\Broker-Logger\logs\\**_. 
+- Log file names are constructed as: \<Region>-\<ServerID>-YYYY-MM-DD-hhmmss.\<extension>
+
+- Log files generated in either CSV or JSON format
 ## Data structure
 - Each JSON array element / CSV row (aside from the header) represents a single brokerage transaction.
 - All fields from the [S_TRADE_BROKER_HISTORY_ITEM_LIST](https://github.com/tera-toolbox/tera-data/blob/master/protocol/S_TRADE_BROKER_HISTORY_ITEM_LIST.2.def) will be included. Relevant fields of interest will generally be:
@@ -37,11 +42,6 @@ Note: the game itself will only make available historical transactions from the 
     - Gold = 10000    
   - itemLevel: item level.
   - name: Character name. _**Yes, you can see who exactly has sold what by character names.**_.
-
-## Log Files
-- All data files generated will be stored in the folder *\<Path to ToolBox/Proxy>\mods\Broker-Logger\logs\\*. 
-- Log file names are constructed as: \<Region>-\<ServerID>-YYYY-MM-DD-hhmmss.\<extension>
-- Log files generated in either CSV or JSON format
 
 ## Usage / Commands
 ### brokerlistall
